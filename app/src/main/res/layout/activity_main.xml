@@ -6,13 +6,98 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="273dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#FF0000"
+            android:backgroundTint="#FF0000"
+            android:backgroundTintMode="#FF0000">
+
+            <ImageButton
+                android:id="@+id/btnStartTimer"
+                android:layout_width="300px"
+                android:layout_height="300px"
+                android:layout_marginTop="50px"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:foregroundGravity="bottom"
+                android:onClick="startTimer"
+                android:src="@drawable/play" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="482dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:backgroundTint="#8F8C8C"
+                android:text="Cargar El Entrenamiento Previo"
+                android:textAlignment="textStart"
+                android:textColor="#1E1E1E"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:backgroundTint="#A480FF80"
+                android:text="Trabajo"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:backgroundTint="#A3FF8080"
+                android:text="Descanso"
+                android:textAlignment="textStart"
+                android:textColor="#1E1E1E"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:backgroundTint="#A4B3B3B3"
+                android:text="Ejercicios"
+                android:textAlignment="textStart"
+                android:textColor="#1E1E1E"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:backgroundTint="#ABA97FFF"
+                android:text="Rondas"
+                android:textAlignment="textStart"
+                android:textColor="#1E1E1E"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:backgroundTint="#A6FFD072"
+                android:text="Reinicio de la ronda"
+                android:textAlignment="textStart"
+                android:textColor="#1E1E1E"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
