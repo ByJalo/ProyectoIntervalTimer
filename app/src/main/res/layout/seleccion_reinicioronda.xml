@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#93FA96"
+    android:layout_height="match_parent"
+    android:background="#A6FFD072"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -24,15 +24,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="Trabajo"
+                android:text="Reinicio de la ronda"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="34sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="84dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -47,7 +47,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextTrabajo"
+                    android:id="@+id/ReinicioRonda"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -64,7 +64,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/EditarTiempo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left|center_vertical"
@@ -74,14 +74,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="620dp"
+            android:layout_height="600dp"
             android:orientation="vertical">
 
             <SeekBar
                 android:id="@+id/seekBarTrabajo"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
-                android:layout_height="620dp"
+                android:layout_height="match_parent"
                 android:max="10"
                 android:progress="3"
                 android:rotation="270"
