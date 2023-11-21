@@ -47,7 +47,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextTrabajo"
+                    android:id="@+id/TiempoDescanso"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -58,18 +58,21 @@
                     android:textSize="48sp" />
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageButton
+                    android:id="@+id/EditarTiempo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="left|center_vertical"
-                    android:text="Button" />
-            </LinearLayout>
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:src="@android:drawable/Edit_icon"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
 
         <LinearLayout
