@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#93FA96"
+    android:background="#A480FF80"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -38,7 +38,9 @@
             <LinearLayout
                 android:layout_width="125dp"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="172dp"
@@ -84,9 +86,8 @@
                 android:layout_height="match_parent"
                 android:max="10"
                 android:progress="3"
-                android:rotation="270"
 
-                />
+                android:rotation="270" />
 
         </LinearLayout>
 
