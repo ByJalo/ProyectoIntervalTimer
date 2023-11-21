@@ -47,7 +47,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextTrabajo"
+                    android:id="@+id/Descanso"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -64,10 +64,10 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/EditarTiempo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left|center_vertical"
+                    android:layout_gravity="bottom|left"
                     android:text="Button" />
             </LinearLayout>
         </LinearLayout>
