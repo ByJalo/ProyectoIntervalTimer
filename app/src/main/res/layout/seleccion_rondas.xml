@@ -47,7 +47,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/TiempoDescanso"
+                    android:id="@+id/Rondas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -78,7 +78,7 @@
             android:orientation="vertical">
 
             <SeekBar
-                android:id="@+id/seekBarTrabajo"
+                android:id="@+id/seekBarRondas"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

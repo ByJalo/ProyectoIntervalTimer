@@ -47,7 +47,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/ReinicioRonda"
+                    android:id="@+id/reinicioRonda"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
@@ -78,7 +78,7 @@
             android:orientation="vertical">
 
             <SeekBar
-                android:id="@+id/seekBarTrabajo"
+                android:id="@+id/seekBarReinicioronda"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
