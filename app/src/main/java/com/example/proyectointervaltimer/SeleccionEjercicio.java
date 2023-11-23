@@ -38,7 +38,7 @@ public class SeleccionEjercicio extends AppCompatActivity {
                     barraEjercicio.setProgress(i);
                 }
                 if(i>barraEjercicio.getMax()){
-                    barraEjercicio.setProgress(barraEjercicio.getMax());
+                    barraEjercicio.setProgress(120);
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}

@@ -21,24 +21,16 @@ public class SeleccionTrabajoActivity extends AppCompatActivity {
 
 
         barraTrabajo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
             @Override
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
                 bar = barraTrabajo;
                 i = bar.getProgress();
                 trabajo.setText(i);
             }
-
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
+            public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
         trabajo.addTextChangedListener(new TextWatcher() {
@@ -48,7 +40,7 @@ public class SeleccionTrabajoActivity extends AppCompatActivity {
                     barraTrabajo.setProgress(i);
                 }
                 if(i>barraTrabajo.getMax()){
-                    barraTrabajo.setProgress(barraTrabajo.getMax());
+                    barraTrabajo.setProgress(180);
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}

@@ -38,7 +38,7 @@ public class SeleccionReinicioRondaActivity extends AppCompatActivity {
                     barraReinicioRonda.setProgress(i);
                 }
                 if(i>barraReinicioRonda.getMax()){
-                    barraReinicioRonda.setProgress(barraReinicioRonda.getMax());
+                    barraReinicioRonda.setProgress(120);
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}

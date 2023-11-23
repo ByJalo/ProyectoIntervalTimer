@@ -38,7 +38,7 @@ public class SeleccionRondasActivity extends AppCompatActivity {
                     barraRondas.setProgress(i);
                 }
                 if(i>barraRondas.getMax()){
-                    barraRondas.setProgress(barraRondas.getMax());
+                    barraRondas.setProgress(10);
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}

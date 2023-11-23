@@ -38,7 +38,7 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
                     barraDecanso.setProgress(i);
                 }
                 if(i>barraDecanso.getMax()){
-                    barraDecanso.setProgress(barraDecanso.getMax());
+                    barraDecanso.setProgress(120);
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
