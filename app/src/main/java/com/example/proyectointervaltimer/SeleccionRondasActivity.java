@@ -17,33 +17,60 @@ public class SeleccionRondasActivity extends AppCompatActivity {
 
         SeekBar barraRondas = (SeekBar) findViewById(R.id.seekBarRondas);
         barraRondas.setMax(10);
-        EditText rondas = (EditText) findViewById(R.id.Rondas);
-        rondas.setText("5");
-        barraRondas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar bar, int i, boolean b) {
-                bar = barraRondas;
-                i = bar.getProgress();
-                rondas.setText(i);
-            }
-            @Override
-            public void onStartTrackingTouch(SeekBar bar) {}
-            @Override
-            public void onStopTrackingTouch(SeekBar bar) {}
-        });
-        rondas.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-                int i = Integer.parseInt(s.toString());
-                if (i<barraRondas.getMax() && i>0){
-                    barraRondas.setProgress(i);
-                }
-                if(i>barraRondas.getMax()){
-                    barraRondas.setProgress(10);
-                }
-            }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        EditText textoRondas = (EditText) findViewById(R.id.Rondas);
+        textoRondas.setText("1");
+
+        barraRondas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int rondas = 1;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                rondas = progress;
+                textoRondas.setText(String.valueOf(rondas));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                textoRondas.setText(String.valueOf(rondas));
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                textoRondas.setText(String.valueOf(rondas));
+            }
+        });
+
+        textoRondas.addTextChangedListener(new TextWatcher() {
+            int rondas = 1;
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                try {
+                    rondas = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    rondas = 1;
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    rondas = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    rondas = 1;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                try {
+                    rondas = Integer.parseInt(s.toString());
+                } catch (NumberFormatException e) {
+                    rondas = 1;
+                }
+                barraRondas.setProgress(rondas);
+            }
         });
 
     }
