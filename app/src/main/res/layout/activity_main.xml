@@ -18,8 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:background="#F42651"
-            android:backgroundTint="#F42651"
-            android:backgroundTintMode="#FF0000">
+            android:backgroundTint="#F42651">
 
             <LinearLayout
                 android:layout_width="124dp"
@@ -67,7 +66,7 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btntrabajo"
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
                 android:backgroundTint="#A480FF80"
