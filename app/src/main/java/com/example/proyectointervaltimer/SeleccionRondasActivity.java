@@ -1,6 +1,8 @@
 package com.example.proyectointervaltimer;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
@@ -18,23 +20,28 @@ public class SeleccionRondasActivity extends AppCompatActivity {
         EditText rondas = (EditText) findViewById(R.id.Rondas);
 
         barraRondas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
             @Override
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
                 bar = barraRondas;
                 i = bar.getProgress();
                 rondas.setText(i);
             }
-
             @Override
-            public void onStartTrackingTouch(SeekBar bar) {
-
-            }
-
+            public void onStartTrackingTouch(SeekBar bar) {}
             @Override
-            public void onStopTrackingTouch(SeekBar bar) {
-
-            }
+            public void onStopTrackingTouch(SeekBar bar) {}
         });
+        rondas.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                int i = Integer.parseInt(s.toString());
+                if (i<barraRondas.getMax() && i>0){
+                    barraRondas.setProgress(i);
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+
     }
 }
