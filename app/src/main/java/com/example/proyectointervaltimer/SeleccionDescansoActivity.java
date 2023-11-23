@@ -16,9 +16,9 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
         setContentView(R.layout.seleccion_descanso);
 
         SeekBar barraDecanso = (SeekBar) findViewById(R.id.seekBarDescanso);
-        barraDecanso.setMax(10);
+        barraDecanso.setMax(120);
         EditText Descanso = (EditText) findViewById(R.id.Descanso);
-
+        Descanso.setText("60");
         barraDecanso.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
@@ -36,6 +36,9 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
                 int i = Integer.parseInt(s.toString());
                 if (i<barraDecanso.getMax() && i>0){
                     barraDecanso.setProgress(i);
+                }
+                if(i>barraDecanso.getMax()){
+                    barraDecanso.setProgress(barraDecanso.getMax());
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}

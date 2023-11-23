@@ -18,7 +18,7 @@ public class SeleccionRondasActivity extends AppCompatActivity {
         SeekBar barraRondas = (SeekBar) findViewById(R.id.seekBarRondas);
         barraRondas.setMax(10);
         EditText rondas = (EditText) findViewById(R.id.Rondas);
-
+        rondas.setText("5");
         barraRondas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
@@ -36,6 +36,9 @@ public class SeleccionRondasActivity extends AppCompatActivity {
                 int i = Integer.parseInt(s.toString());
                 if (i<barraRondas.getMax() && i>0){
                     barraRondas.setProgress(i);
+                }
+                if(i>barraRondas.getMax()){
+                    barraRondas.setProgress(barraRondas.getMax());
                 }
             }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
