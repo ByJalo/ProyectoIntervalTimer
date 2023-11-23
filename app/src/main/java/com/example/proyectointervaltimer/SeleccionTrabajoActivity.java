@@ -1,6 +1,8 @@
 package com.example.proyectointervaltimer;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
@@ -15,7 +17,8 @@ public class SeleccionTrabajoActivity extends AppCompatActivity {
 
         SeekBar barraTrabajo = (SeekBar) findViewById(R.id.seekBarTrabajo);
         barraTrabajo.setMax(180);
-        EditText rondas = (EditText) findViewById(R.id.Trabajo);
+        EditText trabajo = (EditText) findViewById(R.id.Trabajo);
+
 
         barraTrabajo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -23,7 +26,7 @@ public class SeleccionTrabajoActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
                 bar = barraTrabajo;
                 i = bar.getProgress();
-                rondas.setText(i);
+                trabajo.setText(i);
             }
 
             @Override
@@ -36,6 +39,21 @@ public class SeleccionTrabajoActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        trabajo.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                int i = Integer.parseInt(s.toString());
+                if (i<barraTrabajo.getMax() && i>0){
+                    barraTrabajo.setProgress(i);
+                }
+                if(i>barraTrabajo.getMax()){
+                    barraTrabajo.setProgress(barraTrabajo.getMax());
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
     }
 }

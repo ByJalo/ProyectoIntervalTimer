@@ -1,58 +1,35 @@
 package com.example.proyectointervaltimer;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CronoTimerActivity extends AppCompatActivity {
-    private Button pausa;
+    private Button pausa, resume;
     private ProgressBar progressBar;
-    private CountDownTimer cuentaAtras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crono_timer);
 
-        pausa = findViewById(R.id.pausa);
-        progressBar = findViewById(R.id.progressBar);
+        resume = findViewById(R.id.resume);
+        pausa = findViewById(R.id.pause);
+        progressBar = (android.widget.ProgressBar) findViewById(R.id.progressBar);
 
-        pausa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EmpezarCuentaAtras();
-            }
-        });
+        int work_time = getIntent().getIntExtra("work_time", 0);
+        int timeout = getIntent().getIntExtra("timeout", 0);
+        int iterations = getIntent().getIntExtra("iterations", 0);
+        int rounds = getIntent().getIntExtra("rounds", 0);
+        int round_reset = getIntent().getIntExtra("round_reset", 0);
+
+        work_time = 10;
+        timeout = 5;
+        iterations = 2;
+        rounds = 2;
+        round_reset = 5;
 
     }
 
-    private void EmpezarCuentaAtras() {
-        cuentaAtras = new CountDownTimer(10000,100) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                int progreso = (int) (millisUntilFinished / 100);
-                progressBar.setProgress(progreso);
-
-            }
-
-            @Override
-            public void onFinish() {
-
-                progressBar.setProgress(0);
-
-            }
-        };
-        cuentaAtras.start();
-        
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (cuentaAtras != null) {
-            cuentaAtras.cancel();
-        }
-    }
 }
