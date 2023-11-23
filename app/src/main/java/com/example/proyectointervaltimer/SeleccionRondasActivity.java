@@ -18,7 +18,7 @@ public class SeleccionRondasActivity extends AppCompatActivity {
         SeekBar barraRondas = (SeekBar) findViewById(R.id.seekBarRondas);
         barraRondas.setMax(10);
 
-        EditText textoRondas = (EditText) findViewById(R.id.Rondas);
+        EditText textoRondas = (EditText) findViewById(R.id.rondas);
         textoRondas.setText("1");
 
         barraRondas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

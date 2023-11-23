@@ -5,6 +5,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +19,7 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
         SeekBar barraDescanso = (SeekBar) findViewById(R.id.seekBarDescanso);
         barraDescanso.setMax(120);
 
-        EditText textoDescanso = (EditText) findViewById(R.id.Descanso);
+        TextView textoDescanso = (TextView) findViewById(R.id.Descanso);
         textoDescanso.setText("60");
 
         barraDescanso.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -39,13 +40,13 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
                 textoDescanso.setText(String.valueOf(descanso));
             }
         });
-        textoDescanso.addTextChangedListener(new TextWatcher() {
 
+        textoDescanso.addTextChangedListener(new TextWatcher() {
             int descanso = 1;
             public void afterTextChanged(Editable s) {
                 try{
                     descanso = Integer.parseInt(s.toString());
-                }catch (NumberFormatException e){
+                }catch (NumberFormatException e) {
                     descanso = 1;
                 }
                 barraDescanso.setProgress(descanso);
