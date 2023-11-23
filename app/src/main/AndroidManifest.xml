@@ -22,6 +22,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".SeleccionTrabajoActivity" />
+        <activity android:name=".CronoTimerActivity" />
+        <activity android:name=".SeleccionDescansoActivity" />
+        <activity android:name=".SeleccionEjercicio" />
+        <activity android:name=".SeleccionRondasActivity" />
+        <activity android:name=".SeleccionReinicioRondaActivity" />
+
 
         <meta-data
             android:name="preloaded_fonts"

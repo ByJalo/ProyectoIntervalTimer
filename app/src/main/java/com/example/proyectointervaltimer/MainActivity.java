@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +15,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageButton btncronotimer = findViewById(R.id.btncronotimer);
         Button btntrabajo = findViewById(R.id.btntrabajo);
+        Button btndescanso = findViewById(R.id.btndescanso);
+        Button btnejercicio = findViewById(R.id.btnejercicio);
+        Button btnrondas = findViewById(R.id.btnrondas);
+        Button btnreinicioronda = findViewById(R.id.btnreinicioronda);
+
+        btncronotimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cronotimer = new Intent(MainActivity.this, CronoTimerActivity.class);
+
+                startActivity(cronotimer);
+            }
+        });
 
         btntrabajo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +39,44 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(trabajo);
             }
         });
+
+        btndescanso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent descanso = new Intent(MainActivity.this, SeleccionDescansoActivity.class);
+
+                startActivity(descanso);
+            }
+        });
+
+        btnejercicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ejercicio = new Intent(MainActivity.this, SeleccionEjercicio.class);
+
+                startActivity(ejercicio);
+            }
+        });
+
+        btnrondas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent rondas = new Intent(MainActivity.this, SeleccionRondasActivity.class);
+
+                startActivity(rondas);
+            }
+        });
+
+        btnreinicioronda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent reiniciorondas = new Intent(MainActivity.this, SeleccionReinicioRondaActivity.class);
+
+                startActivity(reiniciorondas);
+            }
+        });
+
     }
+
 }
 
