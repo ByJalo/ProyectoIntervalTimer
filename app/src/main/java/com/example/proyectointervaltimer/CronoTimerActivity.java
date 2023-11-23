@@ -22,6 +22,7 @@ public class CronoTimerActivity extends AppCompatActivity {
         pausa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 EmpezarCuentaAtras();
             }
         });
