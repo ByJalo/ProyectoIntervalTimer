@@ -17,35 +17,51 @@ public class SeleccionTrabajoActivity extends AppCompatActivity {
 
         SeekBar barraTrabajo = (SeekBar) findViewById(R.id.seekBarTrabajo);
         barraTrabajo.setMax(180);
-        EditText trabajo = (EditText) findViewById(R.id.Trabajo);
-
+        EditText textoTrabajo = (EditText) findViewById(R.id.Trabajo);
+        textoTrabajo.setText("30");
 
         barraTrabajo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int trabajo = 1;
             @Override
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
-                bar = barraTrabajo;
-                i = bar.getProgress();
-                trabajo.setText(i);
+                trabajo = i;
+                textoTrabajo.setText(String.valueOf(trabajo));
             }
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                textoTrabajo.setText(String.valueOf(trabajo));
+            }
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                textoTrabajo.setText(String.valueOf(trabajo));
+            }
         });
 
-        trabajo.addTextChangedListener(new TextWatcher() {
+        textoTrabajo.addTextChangedListener(new TextWatcher() {
+            int trabajo = 1;
             public void afterTextChanged(Editable s) {
-                int i = Integer.parseInt(s.toString());
-                if (i<barraTrabajo.getMax() && i>0){
-                    barraTrabajo.setProgress(i);
+                try {
+                    trabajo = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    trabajo = 1;
                 }
-                if(i>barraTrabajo.getMax()){
-                    barraTrabajo.setProgress(180);
+                barraTrabajo.setProgress(trabajo);
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                try {
+                    trabajo = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    trabajo = 1;
                 }
             }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    trabajo = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    trabajo = 1;
+                }
+            }
         });
     }
 }

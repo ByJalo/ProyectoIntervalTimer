@@ -15,35 +15,57 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seleccion_descanso);
 
-        SeekBar barraDecanso = (SeekBar) findViewById(R.id.seekBarDescanso);
-        barraDecanso.setMax(120);
-        EditText Descanso = (EditText) findViewById(R.id.Descanso);
-        Descanso.setText("60");
-        barraDecanso.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        SeekBar barraDescanso = (SeekBar) findViewById(R.id.seekBarDescanso);
+        barraDescanso.setMax(120);
+
+        EditText textoDescanso = (EditText) findViewById(R.id.Descanso);
+        textoDescanso.setText("60");
+
+        barraDescanso.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            int descanso = 1;
+
             @Override
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
-                bar = barraDecanso;
-                i = bar.getProgress();
-                Descanso.setText(i);
+                descanso = i;
+                textoDescanso.setText(String.valueOf(descanso));
             }
             @Override
-            public void onStartTrackingTouch(SeekBar bar) {}
+            public void onStartTrackingTouch(SeekBar bar) {
+                textoDescanso.setText(String.valueOf(descanso));
+            }
             @Override
-            public void onStopTrackingTouch(SeekBar bar) {}
+            public void onStopTrackingTouch(SeekBar bar) {
+                textoDescanso.setText(String.valueOf(descanso));
+            }
         });
-        Descanso.addTextChangedListener(new TextWatcher() {
+        textoDescanso.addTextChangedListener(new TextWatcher() {
+
+            int descanso = 1;
             public void afterTextChanged(Editable s) {
-                int i = Integer.parseInt(s.toString());
-                if (i<barraDecanso.getMax() && i>0){
-                    barraDecanso.setProgress(i);
+                try{
+                    descanso = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    descanso = 1;
                 }
-                if(i>barraDecanso.getMax()){
-                    barraDecanso.setProgress(120);
+                barraDescanso.setProgress(descanso);
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                try{
+                    descanso = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    descanso = 1;
                 }
             }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try{
+                    descanso = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    descanso = 1;
+                }
+
+            }
         });
     }
 }

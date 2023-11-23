@@ -17,33 +17,51 @@ public class SeleccionReinicioRondaActivity extends AppCompatActivity {
 
         SeekBar barraReinicioRonda = (SeekBar) findViewById(R.id.seekBarReinicioronda);
         barraReinicioRonda.setMax(120);
-        EditText ReinicioRonda = (EditText) findViewById(R.id.reinicioRonda);
-        ReinicioRonda.setText("60");
+
+        EditText textoReinicioRonda = (EditText) findViewById(R.id.reinicioRonda);
+        textoReinicioRonda.setText("60");
         barraReinicioRonda.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int reinicioRonda = 1;
             @Override
             public void onProgressChanged(SeekBar bar, int i, boolean b) {
-                bar = barraReinicioRonda;
-                i = bar.getProgress();
-                ReinicioRonda.setText(i);
+                reinicioRonda = i;
+                textoReinicioRonda.setText(String.valueOf(reinicioRonda));
             }
             @Override
-            public void onStartTrackingTouch(SeekBar bar) {}
+            public void onStartTrackingTouch(SeekBar bar) {
+                textoReinicioRonda.setText(String.valueOf(reinicioRonda));
+            }
             @Override
-            public void onStopTrackingTouch(SeekBar bar) {}
+            public void onStopTrackingTouch(SeekBar bar) {
+                textoReinicioRonda.setText(String.valueOf(reinicioRonda));
+            }
         });
-        ReinicioRonda.addTextChangedListener(new TextWatcher() {
+        textoReinicioRonda.addTextChangedListener(new TextWatcher() {
+            int reinicioRonda = 1;
             public void afterTextChanged(Editable s) {
-                int i = Integer.parseInt(s.toString());
-                if (i<barraReinicioRonda.getMax() && i>0){
-                    barraReinicioRonda.setProgress(i);
+                try{
+                    reinicioRonda = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    reinicioRonda = 1;
                 }
-                if(i>barraReinicioRonda.getMax()){
-                    barraReinicioRonda.setProgress(120);
+                barraReinicioRonda.setProgress(reinicioRonda);
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                try{
+                    reinicioRonda = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    reinicioRonda = 1;
+                }
+
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try{
+                    reinicioRonda = Integer.parseInt(s.toString());
+                }catch (NumberFormatException e){
+                    reinicioRonda = 1;
                 }
             }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
     }
 }
