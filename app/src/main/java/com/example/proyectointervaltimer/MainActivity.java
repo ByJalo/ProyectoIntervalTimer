@@ -27,6 +27,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent cronotimer = new Intent(MainActivity.this, CronoTimerActivity.class);
 
+                int work_time = getIntent().getIntExtra("work_time", 0);
+                int timeout = getIntent().getIntExtra("timeout", 0);
+                int iterations = getIntent().getIntExtra("iterations", 0);
+                int rounds = getIntent().getIntExtra("rounds", 0);
+                int round_reset = getIntent().getIntExtra("round_reset", 0);
+
+                cronotimer.putExtra("work_time", work_time);
+                cronotimer.putExtra("timeout", timeout);
+                cronotimer.putExtra("iterations", iterations);
+                cronotimer.putExtra("rounds", rounds);
+                cronotimer.putExtra("round_reset", round_reset);
+
+
                 startActivity(cronotimer);
             }
         });
@@ -75,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(reiniciorondas);
             }
         });
+
+
 
     }
 
