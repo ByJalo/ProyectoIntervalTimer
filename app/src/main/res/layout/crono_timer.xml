@@ -2,55 +2,106 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonStart"
+        style="@android:style/Widget.Holo.Light.Button.Toggle"
+        android:layout_width="169dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="580dp"
+        android:layout_marginEnd="120dp"
+        android:background="#4CAF50"
+        android:backgroundTint="#4CAF50"
+        android:text="Comenzar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:iconTint="#43BD48"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="352dp"
-        android:layout_height="324dp"
-        android:layout_marginTop="168dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="271dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="324dp"
+        android:background="#D51515"
+        android:backgroundTint="#FFFFFF"
+        android:backgroundTintMode="src_in"
+        android:foregroundTint="#FFFFFF"
+        android:indeterminateTint="#F8F8F8"
         android:max="100"
-        android:progress="12"
+        android:progress="0"
+        android:progressBackgroundTint="#040404"
+        android:progressDrawable="@android:drawable/progress_horizontal"
+        android:progressTint="#4CAF50"
+        android:secondaryProgressTint="#000000"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="664dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Ejercicio"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="98dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="568dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Ronda"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="112dp"
+        android:text="00:00:00"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:ignore="MissingConstraints" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/estado"
+        android:layout_width="141dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="436dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-            <Button
-                android:id="@+id/EditarTiempo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Back" />
-
-            <Button
-                android:id="@+id/resume"
-                android:layout_width="114dp"
-                android:layout_height="49dp"
-                android:layout_marginBottom="52dp"
-                android:text="Resume" />
-
-            <Button
-                android:id="@+id/pause"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pause" />
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
