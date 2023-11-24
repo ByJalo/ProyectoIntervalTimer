@@ -2,6 +2,7 @@ package com.example.proyectointervaltimer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -27,18 +28,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent cronotimer = new Intent(MainActivity.this, CronoTimerActivity.class);
 
-                int work_time = getIntent().getIntExtra("work_time", 0);
-                int timeout = getIntent().getIntExtra("timeout", 0);
-                int iterations = getIntent().getIntExtra("iterations", 0);
-                int rounds = getIntent().getIntExtra("rounds", 0);
+
+                int work_time = getIntent().getIntExtra("work_time", 60);
+                int timeout = getIntent().getIntExtra("timeout", 15);
+                int iterations = getIntent().getIntExtra("iterations", 3);
+                int rounds = getIntent().getIntExtra("rounds", 1);
                 int round_reset = getIntent().getIntExtra("round_reset", 0);
 
-                cronotimer.putExtra("work_time", work_time);
-                cronotimer.putExtra("timeout", timeout);
-                cronotimer.putExtra("iterations", iterations);
-                cronotimer.putExtra("rounds", rounds);
-                cronotimer.putExtra("round_reset", round_reset);
-
+                Log.println(Log.INFO, "work_time", String.valueOf(work_time));
+                Log.println(Log.INFO, "timeout", String.valueOf(timeout));
+                Log.println(Log.INFO, "iterations", String.valueOf(iterations));
+                Log.println(Log.INFO, "rounds", String.valueOf(rounds));
+                Log.println(Log.INFO, "round_reset", String.valueOf(round_reset));
 
                 startActivity(cronotimer);
             }
