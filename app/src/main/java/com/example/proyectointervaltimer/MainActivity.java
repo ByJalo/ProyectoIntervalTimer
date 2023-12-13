@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +24,20 @@ public class MainActivity extends AppCompatActivity {
         Button btnejercicio = findViewById(R.id.btnejercicio);
         Button btnrondas = findViewById(R.id.btnrondas);
         Button btnreinicioronda = findViewById(R.id.btnreinicioronda);
+
+        int work_time = getIntent().getIntExtra("work_time", 60);
+        int timeout = getIntent().getIntExtra("timeout", 15);
+        int iterations = getIntent().getIntExtra("iterations", 3);
+        int rounds = getIntent().getIntExtra("rounds", 1);
+        int round_reset = getIntent().getIntExtra("round_reset", 0);
+
+        btntrabajo.setText("Trabajo\t\t " + work_time + "s");
+        btndescanso.setText("Descanso\t\t " + timeout + "s");
+        btnejercicio.setText("Ejercicios\t\t " + iterations);
+        btnrondas.setText("Rondas\t\t " + rounds);
+        btnreinicioronda.setText("Reinicio de ronda\t\t " + round_reset + "s");
+
+
 
         btncronotimer.setOnClickListener(new View.OnClickListener() {
             @Override
