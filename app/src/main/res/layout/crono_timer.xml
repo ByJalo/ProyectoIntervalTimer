@@ -2,97 +2,43 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#A3FF8080"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonStart"
-        style="@android:style/Widget.Holo.Light.Button.Toggle"
-        android:layout_width="169dp"
-        android:layout_height="61dp"
-        android:background="#4CAF50"
-        android:backgroundTint="#4CAF50"
-        android:text="Comenzar"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:iconTint="#43BD48"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="271dp"
-        android:layout_height="76dp"
-        android:background="#D51515"
-        android:backgroundTint="#FFFFFF"
-        android:backgroundTintMode="src_in"
-        android:foregroundTint="#FFFFFF"
-        android:indeterminateTint="#F8F8F8"
-        android:max="100"
-        android:progress="0"
-        android:progressBackgroundTint="#040404"
-        android:progressDrawable="@android:drawable/progress_horizontal"
-        android:progressTint="#4CAF50"
-        android:secondaryProgressTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnStartPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="309dp"
+            android:text="Start/Pause" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="260dp"
-        android:layout_marginBottom="664dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Ejercicio"
-        android:textAlignment="viewStart"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnStartPause"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="362dp"
+            android:layout_marginEnd="329dp"
+            android:text="Reset" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="98dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="260dp"
-        android:layout_marginBottom="568dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Ronda"
-        android:textAlignment="viewStart"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/tiempo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="00:00:00"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reiniciar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91" />
-
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnReset"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-241dp"
+            android:layout_marginEnd="329dp"
+            android:text="00:00:00"
+            android:textSize="24sp" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
