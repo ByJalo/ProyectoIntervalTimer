@@ -39,12 +39,14 @@ public class CronoTimerActivity extends AppCompatActivity {
                 int round_reset = getIntent().getIntExtra("round_reset", 0);
 
                 start(work_time, timeout, iterations, rounds, round_reset);
+                startStopTimer();
             }
         });
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startStopTimer();
+                updateCountDownText();
             }
         });
         buttonStop.setOnClickListener(new View.OnClickListener() {
@@ -60,13 +62,12 @@ public class CronoTimerActivity extends AppCompatActivity {
         for (int i = 0; i < rounds; i++) {
             for (int j = 0; j < iterations; j++) {
                 startCountdown();
-                startTimer();
-                pauseTimer();
+                startStopTimer();
+
             }
             if (round_reset > 0) {
                 startCountdown();
-                startTimer();
-                pauseTimer();
+                startStopTimer();
             }
         }
 
@@ -116,12 +117,14 @@ public class CronoTimerActivity extends AppCompatActivity {
     private void startStopTimer() {
         if (timerRunning) {
             pauseTimer();
+            startCountdown();
         } else {
             startTimer();
+            onDestroy();
         }
     }
     private void startCountdown() {
-        countDownTimer = new CountDownTimer(10000, 100) { // 10 segundos (10000 milisegundos) con actualización cada 100ms
+        countDownTimer = new CountDownTimer(10000, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
                 int progress = (int) (millisUntilFinished / 100); // Actualizar la ProgressBar
@@ -131,7 +134,7 @@ public class CronoTimerActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 progressBar.setProgress(0);
-                // Aquí puedes activar la cuenta u realizar otras acciones al finalizar el conteo.
+                // Activar la cuenta u realizar otras acciones al finalizar el conteo.
             }
         };
         countDownTimer.start();
