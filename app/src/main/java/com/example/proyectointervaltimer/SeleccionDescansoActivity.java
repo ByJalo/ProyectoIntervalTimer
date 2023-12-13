@@ -1,5 +1,6 @@
 package com.example.proyectointervaltimer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -68,5 +69,19 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        // Prepare the data to be sent back to the first activity
+        super.onBackPressed();
+
+        int timeout = Integer.parseInt(((EditText) findViewById(R.id.Trabajo)).getText().toString());
+
+        Intent mainAct = new Intent(SeleccionDescansoActivity.this, MainActivity.class);
+        mainAct.putExtra("timeout", timeout);
+
+
+        // Finish the activity
+        startActivity(mainAct);
     }
 }

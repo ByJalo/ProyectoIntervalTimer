@@ -22,22 +22,29 @@ public class CronoTimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crono_timer);
 
+        startButton = findViewById(R.id.buttonStart);
         progressBar = findViewById(R.id.progressBar);
         textViewTimer = findViewById(R.id.tiempo);
         buttonStart = findViewById(R.id.buttonStart);
         buttonStop = findViewById(R.id.buttonStop);
 
-        buttonStart.setOnClickListener(new View.OnClickListener() {
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startCountdown();
-                startTimer();
+
+                int work_time = getIntent().getIntExtra("work_time", 60);
+                int timeout = getIntent().getIntExtra("timeout", 15);
+                int iterations = getIntent().getIntExtra("iterations", 3);
+                int rounds = getIntent().getIntExtra("rounds", 1);
+                int round_reset = getIntent().getIntExtra("round_reset", 0);
+
+                startCountdown(work_time, timeout, iterations, rounds, round_reset);
             }
         });
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pauseTimer();
+                startStopTimer();
             }
         });
         buttonStop.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +95,14 @@ public class CronoTimerActivity extends AppCompatActivity {
         buttonStop.setVisibility(View.VISIBLE);
     }
 
-    private void startCountdown() {
+    private void startStopTimer() {
+        if (timerRunning) {
+            pauseTimer();
+        } else {
+            startTimer();
+        }
+    }
+    private void startCountdown(int work_time, int timeout, int iterations, int rounds, int round_reset) {
         countDownTimer = new CountDownTimer(10000, 100) { // 10 segundos (10000 milisegundos) con actualización cada 100ms
             @Override
             public void onTick(long millisUntilFinished) {

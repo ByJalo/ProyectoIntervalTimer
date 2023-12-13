@@ -1,8 +1,10 @@
 package com.example.proyectointervaltimer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
@@ -73,5 +75,20 @@ public class SeleccionRondasActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Prepare the data to be sent back to the first activity
+        super.onBackPressed();
+
+        int rounds = Integer.parseInt(((EditText) findViewById(R.id.Trabajo)).getText().toString());
+
+        Intent mainAct = new Intent(SeleccionRondasActivity.this, MainActivity.class);
+        mainAct.putExtra("rounds", rounds);
+
+
+        // Finish the activity
+        startActivity(mainAct);
     }
 }

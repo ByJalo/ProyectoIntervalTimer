@@ -1,5 +1,6 @@
 package com.example.proyectointervaltimer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -64,5 +65,19 @@ public class SeleccionEjercicio extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        // Prepare the data to be sent back to the first activity
+        super.onBackPressed();
+
+        int work_time = Integer.parseInt(((EditText) findViewById(R.id.Trabajo)).getText().toString());
+
+        Intent mainAct = new Intent(SeleccionEjercicio.this, MainActivity.class);
+        mainAct.putExtra("work_time", work_time);
+
+
+        // Finish the activity
+        startActivity(mainAct);
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 Log.println(Log.INFO, "iterations", String.valueOf(iterations));
                 Log.println(Log.INFO, "rounds", String.valueOf(rounds));
                 Log.println(Log.INFO, "round_reset", String.valueOf(round_reset));
+
+                cronotimer.putExtra("work_time", work_time);
+                cronotimer.putExtra("timeout", timeout);
+                cronotimer.putExtra("iterations", iterations);
+                cronotimer.putExtra("rounds", rounds);
+                cronotimer.putExtra("round_reset", round_reset);
 
                 startActivity(cronotimer);
             }
@@ -93,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
 }
 

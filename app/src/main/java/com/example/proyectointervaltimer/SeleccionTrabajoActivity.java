@@ -80,6 +80,6 @@ public class SeleccionTrabajoActivity extends AppCompatActivity {
         Log.println(Log.INFO, "work_time", String.valueOf(workTime));
 
         // Finish the activity
-        finish();
+        startActivity(mainAct);
     }
 }
