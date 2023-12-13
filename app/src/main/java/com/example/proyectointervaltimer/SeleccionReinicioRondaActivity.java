@@ -1,5 +1,6 @@
 package com.example.proyectointervaltimer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -63,5 +64,19 @@ public class SeleccionReinicioRondaActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        // Prepare the data to be sent back to the first activity
+        super.onBackPressed();
+
+        int round_reset = Integer.parseInt(((EditText) findViewById(R.id.Trabajo)).getText().toString());
+
+        Intent mainAct = new Intent(SeleccionReinicioRondaActivity.this, MainActivity.class);
+        mainAct.putExtra("round_reset", round_reset);
+
+
+        // Finish the activity
+        startActivity(mainAct);
     }
 }
