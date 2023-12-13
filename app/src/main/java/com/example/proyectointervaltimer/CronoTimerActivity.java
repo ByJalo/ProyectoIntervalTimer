@@ -22,22 +22,22 @@ public class CronoTimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crono_timer);
 
-        startButton = findViewById(R.id.buttonStart);
         progressBar = findViewById(R.id.progressBar);
         textViewTimer = findViewById(R.id.tiempo);
         buttonStart = findViewById(R.id.buttonStart);
         buttonStop = findViewById(R.id.buttonStop);
 
-        startButton.setOnClickListener(new View.OnClickListener() {
+        buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startCountdown();
+                startTimer();
             }
         });
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startStopTimer();
+                pauseTimer();
             }
         });
         buttonStop.setOnClickListener(new View.OnClickListener() {
@@ -88,13 +88,6 @@ public class CronoTimerActivity extends AppCompatActivity {
         buttonStop.setVisibility(View.VISIBLE);
     }
 
-    private void startStopTimer() {
-        if (timerRunning) {
-            pauseTimer();
-        } else {
-            startTimer();
-        }
-    }
     private void startCountdown() {
         countDownTimer = new CountDownTimer(10000, 100) { // 10 segundos (10000 milisegundos) con actualización cada 100ms
             @Override
