@@ -70,7 +70,7 @@ public class SeleccionReinicioRondaActivity extends AppCompatActivity {
         // Prepare the data to be sent back to the first activity
         super.onBackPressed();
 
-        int round_reset = Integer.parseInt(((EditText) findViewById(R.id.Trabajo)).getText().toString());
+        int round_reset = Integer.parseInt(((EditText) findViewById(R.id.reinicioRonda)).getText().toString());
 
         Intent mainAct = new Intent(SeleccionReinicioRondaActivity.this, MainActivity.class);
         mainAct.putExtra("round_reset", round_reset);

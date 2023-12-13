@@ -71,7 +71,7 @@ public class SeleccionEjercicio extends AppCompatActivity {
         // Prepare the data to be sent back to the first activity
         super.onBackPressed();
 
-        int work_time = Integer.parseInt(((EditText) findViewById(R.id.Trabajo)).getText().toString());
+        int work_time = Integer.parseInt(((EditText) findViewById(R.id.Ejercicio)).getText().toString());
 
         Intent mainAct = new Intent(SeleccionEjercicio.this, MainActivity.class);
         mainAct.putExtra("work_time", work_time);

@@ -75,7 +75,7 @@ public class SeleccionDescansoActivity extends AppCompatActivity {
         // Prepare the data to be sent back to the first activity
         super.onBackPressed();
 
-        int timeout = Integer.parseInt(((EditText) findViewById(R.id.Trabajo)).getText().toString());
+        int timeout = Integer.parseInt(((EditText) findViewById(R.id.Descanso)).getText().toString());
 
         Intent mainAct = new Intent(SeleccionDescansoActivity.this, MainActivity.class);
         mainAct.putExtra("timeout", timeout);
