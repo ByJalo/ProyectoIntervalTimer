@@ -2,118 +2,106 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="61dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/EditarTiempo"
-        tools:layout_editor_absoluteX="58dp" />
+    <Button
+        android:id="@+id/buttonStart"
+        style="@android:style/Widget.Holo.Light.Button.Toggle"
+        android:layout_width="169dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="580dp"
+        android:layout_marginEnd="120dp"
+        android:background="#4CAF50"
+        android:backgroundTint="#4CAF50"
+        android:text="Comenzar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:iconTint="#43BD48"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="306dp"
-        android:layout_height="292dp"
-        app:layout_constraintBottom_toTopOf="@+id/textClock"
-        app:layout_constraintEnd_toEndOf="parent"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="271dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="324dp"
+        android:background="#D51515"
+        android:backgroundTint="#FFFFFF"
+        android:backgroundTintMode="src_in"
+        android:foregroundTint="#FFFFFF"
+        android:indeterminateTint="#F8F8F8"
+        android:max="100"
+        android:progress="0"
+        android:progressBackgroundTint="#040404"
+        android:progressDrawable="@android:drawable/progress_horizontal"
+        android:progressTint="#4CAF50"
+        android:secondaryProgressTint="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextClock
-        android:id="@+id/textClock"
-        android:layout_width="162dp"
-        android:layout_height="107dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="664dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Ejercicio"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="121dp"
-        android:layout_height="51dp"
-        android:text="Button"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="98dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="568dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Ronda"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
-        app:layout_constraintVertical_bias="0.768" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/EditarTiempo"
+    <TextView
+        android:id="@+id/tiempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="112dp"
+        android:text="00:00:00"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/estado"
+        android:layout_width="141dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="436dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="16dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
-
-    <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="118dp"
-        android:layout_height="37dp"
-        android:ems="10"
-        android:inputType="time"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
-        app:layout_constraintVertical_bias="0.746"
-        tools:layout_editor_absoluteX="154dp" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="117dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintTop_toBottomOf="@+id/textClock"
-        tools:layout_editor_absoluteX="147dp" />
-
-    <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="61dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        tools:layout_editor_absoluteX="298dp" />
-
-    <EditText
-        android:id="@+id/editTextText5"
-        android:layout_width="161dp"
-        android:layout_height="97dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
-        app:layout_constraintEnd_toEndOf="@+id/progressBar"
-        app:layout_constraintStart_toStartOf="@+id/progressBar"
-        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
