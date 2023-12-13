@@ -38,7 +38,7 @@ public class CronoTimerActivity extends AppCompatActivity {
                 int rounds = getIntent().getIntExtra("rounds", 1);
                 int round_reset = getIntent().getIntExtra("round_reset", 0);
 
-                startCountdown(work_time, timeout, iterations, rounds, round_reset);
+                start(work_time, timeout, iterations, rounds, round_reset);
             }
         });
         buttonStart.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +54,24 @@ public class CronoTimerActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void start(int work_time, int timeout, int iterations, int rounds, int round_reset) {
+
+        for (int i = 0; i < rounds; i++) {
+            for (int j = 0; j < iterations; j++) {
+                startCountdown();
+                startTimer();
+                pauseTimer();
+            }
+            if (round_reset > 0) {
+                startCountdown();
+                startTimer();
+                pauseTimer();
+            }
+        }
+
+    }
+
     private void updateCountDownText() {
         int hours = (int) (timeLeftInMillis / 1000) / 3600;
         int minutes = (int) ((timeLeftInMillis / 1000) % 3600) / 60;
@@ -102,7 +120,7 @@ public class CronoTimerActivity extends AppCompatActivity {
             startTimer();
         }
     }
-    private void startCountdown(int work_time, int timeout, int iterations, int rounds, int round_reset) {
+    private void startCountdown() {
         countDownTimer = new CountDownTimer(10000, 100) { // 10 segundos (10000 milisegundos) con actualización cada 100ms
             @Override
             public void onTick(long millisUntilFinished) {
